@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Remove sensitive data from user object
-    const { passwordHash, ...userWithoutPassword } = user.toObject();
+    const { passwordHash: _, ...userWithoutPassword } = user.toObject();
 
     return NextResponse.json({
       success: true,
